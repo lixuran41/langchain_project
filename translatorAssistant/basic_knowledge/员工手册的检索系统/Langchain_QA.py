@@ -12,15 +12,16 @@
 import os
 import sys
 
+from langchain_classic.chains.retrieval_qa.base import RetrievalQA
+from langchain_classic.retrievers import MultiQueryRetriever
+from langchain_community.cache import InMemoryCache
 # 导入所有需要的模块
 from langchain_community.document_loaders import TextLoader, PyPDFLoader, Docx2txtLoader
+from langchain_core.globals import set_llm_cache
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.vectorstores import FAISS
-from langchain.retrievers.multi_query import MultiQueryRetriever
-from langchain.chains import RetrievalQA
-from langchain_community.cache import InMemoryCache
-from langchain.globals import set_llm_cache
+
 
 # 设置环境变量
 # 请替换为你自己的 API 密钥和 URL
